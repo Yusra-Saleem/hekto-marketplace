@@ -54,32 +54,13 @@ hekto-marketplace/
 
 ## 5. Getting Started
 
-### Prerequisites
-- Node.js v18.17+ or v20+
-- npm, yarn, or pnpm
-- Sanity Project ID and Dataset
-
-### Local Installation
-
 ```bash
-# Clone the repository
 git clone https://github.com/Yusra-Saleem/hekto-marketplace.git
 cd hekto-marketplace
 
-# Install dependencies
 npm install
-
-# Configure environment
-cp .env.example .env.local
-```
-
-### Development Execution
-
-```bash
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 6. Author and License
 
