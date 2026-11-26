@@ -1,61 +1,88 @@
-# Hekto Marketplace
+# Hekto Lifestyle Marketplace
 
-> Multi-category home furnishings, furniture, and lifestyle commerce marketplace.
+> Production-grade multi-category furniture and home decor e-commerce platform built on Next.js 15, Sanity CMS, and Tailwind CSS.
 
-## Overview
+## 1. System Overview
 
-Hekto is an expansive multi-category furniture and home decor marketplace featuring extensive product collections, featured carousels, customer reviews, and cart checkout flows.
+Hekto is an enterprise e-commerce web platform architected for modern lifestyle furnishings and interior decor. It integrates headless content management via Sanity Studio, client-side dynamic search filtering, an optimized checkout pipeline, and a pixel-perfect component design system.
 
-## Key Features
+The application leverages Next.js App Router for server-side rendering, sub-second route transitions, and responsive cross-device performance.
 
-- Rich home page with featured products, trending categories, and promotional banners
-- Grid and list view product catalogs with sorting and filtering
-- Shopping cart, wishlist management, and checkout screens
-- Pixel-perfect responsive implementation adhering to modern design standards
+## 2. Technical Architecture
 
-## Architecture and Technology Stack
+```
+[ Client Browser ]
+        │
+        ▼
+[ Next.js 15 Edge / App Router ] ── (Server Components & SSR)
+        │
+        ├──▶ [ Sanity CMS (Headless API) ] ── (Product Data & Inventory)
+        ├──▶ [ Middleware Auth & Routing ] ── (Route Protection & Sessions)
+        └──▶ [ Client State (Cart/Wishlist) ] ── (Persistent Storage)
+```
 
-- **Core Technologies:** Next.js, React, TypeScript, Tailwind CSS, Lucide Icons
-- **Author:** Yusra Saleem
-- **Portfolio:** [yusrasaleem.dev](https://yusrasaleem.dev)
+### Technology Stack
+- **Framework:** Next.js 15 (React 19, TypeScript)
+- **Content Engine:** Sanity Headless CMS (`sanity.config.ts`, `sanity.cli.ts`)
+- **Styling:** Tailwind CSS, PostCSS, Radix UI primitives
+- **Icons & Assets:** Lucide React
+- **Architecture:** Next.js Middleware, Server Actions, Dynamic Data Fetching
 
-## Getting Started
+## 3. Core Functional Capabilities
+
+- **Headless Catalog Management:** Real-time synchronization with Sanity CMS for product listings, variant attributes, inventory status, and promotional banners.
+- **Advanced Product Filtering:** Instant client-side faceted search by category, price range, color palette, and customer ratings.
+- **Stateful Shopping Cart:** Persistent shopping cart state supporting quantity mutations, coupon code applications, and live price recalculations.
+- **Responsive Design System:** Fully accessible atomic UI components conforming to modern accessibility standards across mobile, tablet, and ultra-wide viewports.
+
+## 4. Directory Structure
+
+```
+hekto-marketplace/
+├── sanity.config.ts          # Sanity Studio CMS workspace configuration
+├── sanity.cli.ts             # Sanity CLI deployment settings
+├── middleware.ts             # Route protection and header manipulation
+├── src/
+│   ├── app/                  # App Router pages and API routes
+│   ├── components/           # Reusable UI component library
+│   ├── lib/                  # Sanity client and utility helpers
+│   └── types/                # TypeScript interface definitions
+├── public/                   # Static imagery and brand assets
+├── tailwind.config.ts        # Design tokens and theme configuration
+└── package.json              # Project dependencies and build scripts
+```
+
+## 5. Getting Started
 
 ### Prerequisites
+- Node.js v18.17+ or v20+
+- npm, yarn, or pnpm
+- Sanity Project ID and Dataset
 
-Ensure you have the required runtime environment installed for this repository:
-- Node.js (v18+) for JavaScript/TypeScript projects
-- Python (3.10+) for Python services and agent workflows
-
-### Installation
-
-Clone the repository to your local machine:
+### Local Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/Yusra-Saleem/hekto-marketplace.git
 cd hekto-marketplace
-```
 
-Install dependencies:
-
-```bash
-# For Node / Next.js projects
+# Install dependencies
 npm install
 
-# For Python projects
-pip install -r requirements.txt
+# Configure environment
+cp .env.example .env.local
 ```
 
-### Running Locally
+### Development Execution
 
 ```bash
-# Start local development server
 npm run dev
-
-# Or for Python entry points
-python main.py
 ```
 
-## License
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for complete details.
+## 6. Author and License
+
+- **Author:** Yusra Saleem
+- **Portfolio:** [yusrasaleem.dev](https://yusrasaleem.dev)
+- **License:** Licensed under the [MIT License](LICENSE).
